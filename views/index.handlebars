@@ -38,7 +38,9 @@
               </span>
               <a href="./restaurants/{{ this._id }}" class="btn btn-primary">Detail</a>
               <a href="./restaurants/{{ this._id }}/edit" class="btn btn-primary">edit</a>
-
+              <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-primary">delete</button>
+              </form>
             </div>
           </div>
         </a>
