@@ -6,16 +6,14 @@ const restaurantSchema = new Schema({
     required: true // 這是個必填欄位
   },
   name_en: {
-    type: String,
-    required: true
+    type: String
   },
   category: {
     type: String,
     required: true
   },
   image: {
-    type: String,
-    required: true
+    type: String
   },
   location: {
     type: String,
@@ -26,18 +24,14 @@ const restaurantSchema = new Schema({
     required: true
   },
   google_map: {
-    type: String,
-    require: true
+    type: String
   },
   rating: {
     type: Number,
-    min: 0,
-    max: 5,
     require: true
   },
   description: {
-    type: String,
-    require: true
+    type: String
   }
 })
 
