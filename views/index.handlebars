@@ -36,16 +36,18 @@
                 {{this.rating}}
                 <i class="fas fa-star fa-xs"></i>
               </span>
-              <a href="./restaurants/{{ this._id }}" class="btn btn-primary">Detail</a>
-              <a href="./restaurants/{{ this._id }}/edit" class="btn btn-primary">edit</a>
+            </div>
+            <div class="card-footer">
+              <a href="./restaurants/{{ this._id }}" class="btn btn-primary">介紹</a>
+              <a href="./restaurants/{{ this._id }}/edit" class="btn btn-primary">編輯</a>
               <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
-                <button type="submit" class="btn btn-primary">delete</button>
+                <button type="submit" class="btn btn-primary">刪除</button>
               </form>
             </div>
+
           </div>
         </a>
         {{/each}}
-        <a href="./restaurants/new" class="btn btn-primary">Create</a>
       </div>
     </div>
   </div>

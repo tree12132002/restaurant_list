@@ -112,24 +112,15 @@ app.post('/restaurants/:id/delete', (req, res) => {
     .catch(error => console.log(error))
 })
 
-
+// search results routes setting
 app.get('/search', (req, res) => {
-  const keyword = req.query.keyword
-  const restaurants = restaurantList.filter(restaurant =>
-    restaurant.name.toLowerCase().includes(keyword.toLowerCase()) ||
-    restaurant.category.toLowerCase().includes(keyword.toLowerCase()))
-
-  if (!restaurants.length) {
-    res.render('noresult')
-  }
-  res.render('index', { restaurants: restaurants, keyword: keyword })
-})
-
-app.post('/restaruants', (req, res) => {
-  const name = req.body.name
-  return Restaurant.create({ name })
-    .then(() => res.redirect('/'))
-    .catch(error => console.log(error))
+  const keyword = req.query.keyword.trim().toLowerCase()
+  const keywordRegex = new RegExp(keyword, 'i')
+  Restaurant.find({ $or: [{ category: { $regex: keywordRegex } }, { name: { $regex: keywordRegex } }] })
+    .lean()
+    .then(restaurants => {
+      res.render('index', { restaurants, keyword })
+    })
 })
 
 // start and listen on the Express server
