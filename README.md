@@ -3,10 +3,11 @@
 
 ## Feature
 * The user can see the following information about the restaurants on the home page: image, name, category, and rating.
-* The user can click the `介紹 button` or `restaurant image` to see more information about the restaurant.
+* The user can click the `Detail button` or `restaurant image` to see more information about the restaurant.
 * The user can click the `新增餐廳 button` to create a new restaurant with some information.
-* The user can click the `編輯 button` to edit information about the restaurant.
-* The user can click the `刪除 button` to delete the restaurant card.
+* The user can click the `Edit button` to edit information about the restaurant.
+* The user can click the `Delete button` to delete the restaurant card.
+* The user can click the `Sort button` to rearrange the restaurant card.
 * The user can search for a specific restaurant by entering the name or category of restaurants in the search bar.
 ## How to use it 
 1. Download with Terminal：
@@ -36,13 +37,14 @@
    ctrl + c
    ```
 ## Packages and versions
-* npm：7.20.3
-* express: 4.17.1
-* express handlebars: 5.3.3
-* nodemon: 2.0.12
-* mongoose: 5.13.7
-* jquery: 3.6.0
-* popper: v2.9.1
+* npm： v7.20.3
+* express: v4.17.1
+* express handlebars: v5.3.3
+* nodemon: v2.0.12
+* mongoose: v5.13.7
+* jquery: v3.5.1
+* popper: v1.16.1
 * bootstrap: v4.6.0
 * font-awesome: v5.15.4
+* method-override: v3.0.0
 
