@@ -38,10 +38,10 @@
               </span>
             </div>
             <div class="card-footer">
-              <a href="./restaurants/{{ this._id }}" class="btn btn-primary">介紹</a>
-              <a href="./restaurants/{{ this._id }}/edit" class="btn btn-primary">編輯</a>
-              <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
-                <button type="submit" class="btn btn-primary">刪除</button>
+              <a href="./restaurants/{{ this._id }}/edit" class="btn btn-success">Edit</a>
+              <a href="./restaurants/{{ this._id }}" class="btn btn-secondary">Detail</a>
+              <form action="./restaurants/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Delete</button>
               </form>
             </div>
 

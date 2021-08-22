@@ -4,6 +4,7 @@ const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')
 const Restaurant = require('./models/restaurant')
+const methodOverride = require('method-override')
 
 const mongoose = require('mongoose') // 載入 mongoose
 const restaurant = require('./models/restaurant')
@@ -23,6 +24,7 @@ app.set('view engine', 'handlebars')
 // setting static files
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 // routes setting
 // browse all restaurants
@@ -74,7 +76,7 @@ app.get('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
-app.post('/restaurants/:id/edit', (req, res) => {
+app.put('/restaurants/:id', (req, res) => {
   const id = req.params.id
   const name = req.body.name
   const name_en = req.body.name_en
@@ -104,7 +106,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
 })
 
 // delete a restaurant
-app.post('/restaurants/:id/delete', (req, res) => {
+app.delete('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
     .then(restaurant => restaurant.remove())
