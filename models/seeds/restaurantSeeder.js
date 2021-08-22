@@ -1,10 +1,6 @@
-const mongoose = require('mongoose')
 const Restaurant = require('../restaurant') // 載入 restaurant model
-mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true }) // 設定連線到 mongoDB
-const db = mongoose.connection
-db.on('error', () => {
-  console.log('mongodb error!')
-})
+require('../../config/mongoose')
+
 db.once('open', () => {
   console.log('mongodb connected!')
   Restaurant.create(
