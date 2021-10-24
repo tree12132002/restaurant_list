@@ -1,5 +1,5 @@
 const Restaurant = require('../restaurant') // 載入 restaurant model
-require('../../config/mongoose')
+const db = require('../../config/mongoose')
 
 db.once('open', () => {
   console.log('mongodb connected!')
