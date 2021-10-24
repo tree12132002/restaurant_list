@@ -4,14 +4,20 @@ const app = express()
 const port = 3000
 
 const exphbs = require('express-handlebars')
-const Restaurant = require('./models/restaurant')
+const session = require('express-session')
 const methodOverride = require('method-override')
 const routes = require('./routes') // 引用路由器
 require('./config/mongoose')
 
 // setting template engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
-app.set('view engine', 'handlebars')
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.set('view engine', 'hbs')
+
+app.use(session({
+  secret: 'ThisIsMySecret',
+  resave: false,
+  saveUninitialized: true
+}))
 
 // setting static files
 app.use(express.static('public'))
@@ -21,5 +27,5 @@ app.use(routes) // 將 request 導入路由器
 
 // start and listen on the Express server
 app.listen(port, () => {
-  console.log(`Express is listening on localhost:${port}`)
+  console.log(`Express is listening on http://localhost:${port}`)
 })
