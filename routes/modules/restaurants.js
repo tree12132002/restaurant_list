@@ -8,12 +8,11 @@ router.get('/new', (req, res) => {
 })
 // create function
 router.post('/', (req, res) => {
-  
   const restaurant = new Restaurant({
     name: req.body.name,
     name_en: req.body.name_en,
     category: req.body.category,
-    image: req.body.image || "https://cdn2.ettoday.net/images/1734/d1734833.jpg",
+    image: req.body.image || 'https://cdn2.ettoday.net/images/1734/d1734833.jpg',
     location: req.body.location || null,
     google_map: req.body.google_map,
     rating: req.body.rating,
@@ -78,7 +77,5 @@ router.delete('/:id', (req, res) => {
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
-
-
 
 module.exports = router

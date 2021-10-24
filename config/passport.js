@@ -4,7 +4,6 @@ const FacebookStrategy = require('passport-facebook').Strategy
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
 
-
 module.exports = app => {
   // 初始化 Passport 模組
   app.use(passport.initialize())

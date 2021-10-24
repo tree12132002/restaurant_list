@@ -17,7 +17,6 @@ require('./config/mongoose')
 const app = express()
 const PORT = process.env.PORT
 
-
 // setting template engine
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')

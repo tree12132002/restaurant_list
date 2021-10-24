@@ -21,7 +21,7 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res) => {
   // 取得註冊表單參數
   const { name, email, password, confirmPassword } = req.body
-  const errors =[]
+  const errors = []
 
   if (!email || !password || !confirmPassword) {
     errors.push({ message: '必填欄位未寫。' })
@@ -52,7 +52,7 @@ router.post('/register', (req, res) => {
           confirmPassword
         })
         // 如果還沒，寫入資料庫
-      } 
+      }
       return bcrypt
         .genSalt(10) // 產生「鹽」，並設定複雜度係數為 10
         .then(salt => bcrypt.hash(password, salt)) // 為使用者密碼「加鹽」，產生雜湊值
