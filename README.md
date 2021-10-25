@@ -42,22 +42,15 @@ The user can use the information of default users to login the website.
 * email: user1@example.com password: 12345678
 * email: user2@example.com password: 12345678
 
-## Packages and versions
-* npm: v7.20.3
-* express: v4.17.1
-* express handlebars: v5.3.3
-* nodemon: v2.0.12
-* mongoose: v5.13.7
-* jquery: v3.5.1
-* popper: v1.16.1
-* bootstrap: v4.6.0
-* font-awesome: v5.15.4
-* method-override: v3.0.0
-* bcryptjs: 2.4.3
-* connect-flash : v0.1.1
-* dotenv: v10.0.0
-* express-session: 1.17.2
-* passport: v0.5.0
-* passport-facebook: v3.0.0
-* passport-local: v1.0.0
+## Environment Variable
+Rename the file `.env.example` to `.env` so that you can run the app successfully.
+Or you can create a file named `.env` and type the following content inside.
+```
+FACEBOOK_ID=SKIP
+FACEBOOK_SECRET=SKIP
+FACEBOOK_CALLBACK=http://localhost:3000/auth/facebook/callback
+SESSION_SECRET=ThisIsMySecret
+MONGODB_URI=mongodb://localhost/restaurant-list
+PORT=3000`
 
+```
